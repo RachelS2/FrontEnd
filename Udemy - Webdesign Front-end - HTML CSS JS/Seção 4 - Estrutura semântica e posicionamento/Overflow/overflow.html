@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+    <style>
+
+        body{
+            margin-bottom: 500px;
+        }
+
+        .container{
+            border: 2px solid black;
+            padding: 16px;
+            width: 300px;
+            margin-bottom: 16px;
+            height: 300px;
+            background-color: rgba(255, 0, 0, .5);
+        }
+
+        .item{
+            background-color: rgb(186, 139, 231);
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        .fit-content .item{
+            width: fit-content;
+        }
+
+        .min-content .item{
+            width: min-content; /* pega a maior palavra do bloco e ajusta a largura do bloco com base nela. A largura fica a menor possível */
+        }
+
+        .max-content .item{
+            width: max-content; /* maior largura possível. Não quebra a linha da frase*/
+        }
+
+        .overflow-hidden{
+            overflow: hidden;
+        }
+
+        .overflow-scroll{
+            overflow: scroll;
+        }
+
+        .overflow-auto{
+            overflow: auto;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container fit-content overflow-hidden">
+        <div class="item">lorem</div>
+        <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, id.</div>
+        <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti distinctio quasi voluptate illo obcaecati placeat, perspiciatis, ab ex dolore rerum minima beatae tempore dolores neque.</div>
+        <div class="item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro ut quisquam id, magnam atque neque odit consectetur numquam maiores repellendus eligendi, facilis doloribus quas quaerat?</div>
+    </div>
+
+    <div class="container min-content overflow-auto">
+        <div class="item">lorem</div>
+        <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, id.</div>
+        <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti distinctio quasi voluptate illo obcaecati placeat, perspiciatis, ab ex dolore rerum minima beatae tempore dolores neque.</div>
+        <div class="item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro ut quisquam id, magnam atque neque odit consectetur numquam maiores repellendus eligendi, facilis doloribus quas quaerat?</div>
+    </div>
+
+    <div class="container max-content overflow-scroll">
+        <div class="item">lorem</div>
+        <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, id.</div>
+        <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti distinctio quasi voluptate illo obcaecati placeat, perspiciatis, ab ex dolore rerum minima beatae tempore dolores neque.</div>
+        <div class="item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro ut quisquam id, magnam atque neque odit consectetur numquam maiores repellendus eligendi, facilis doloribus quas quaerat?</div>
+    </div>
+</body>
+</html>
